@@ -1,0 +1,192 @@
+[training@localhost ~]$ sqoop import --connect jdbc:mysql://localhost/ecommerce --username training --password training --table clickstream --hive-import --hive-table clickstream -m 1
+23/07/19 06:51:28 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+23/07/19 06:51:28 INFO tool.BaseSqoopTool: Using Hive-specific delimiters for output. You can override
+23/07/19 06:51:28 INFO tool.BaseSqoopTool: delimiters with --fields-terminated-by, etc.
+23/07/19 06:51:28 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+23/07/19 06:51:28 INFO tool.CodeGenTool: Beginning code generation
+23/07/19 06:51:29 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `clickstream` AS t LIMIT 1
+23/07/19 06:51:29 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `clickstream` AS t LIMIT 1
+23/07/19 06:51:29 INFO orm.CompilationManager: HADOOP_HOME is /usr/lib/hadoop
+Note: /tmp/sqoop-training/compile/7471270fafc5f9614e511823026824d5/clickstream.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+23/07/19 06:51:30 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-training/compile/7471270fafc5f9614e511823026824d5/clickstream.jar
+23/07/19 06:51:30 WARN manager.MySQLManager: It looks like you are importing from mysql.
+23/07/19 06:51:30 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+23/07/19 06:51:30 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+23/07/19 06:51:30 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+23/07/19 06:51:31 INFO mapreduce.ImportJobBase: Beginning import of clickstream
+23/07/19 06:51:32 WARN mapred.JobClient: Use GenericOptionsParser for parsing the arguments. Applications should implement Tool for the same.
+23/07/19 06:51:34 INFO mapred.JobClient: Running job: job_202307190440_0001
+23/07/19 06:51:35 INFO mapred.JobClient:  map 0% reduce 0%
+23/07/19 06:51:44 INFO mapred.JobClient:  map 100% reduce 0%
+23/07/19 06:51:46 INFO mapred.JobClient: Job complete: job_202307190440_0001
+23/07/19 06:51:46 INFO mapred.JobClient: Counters: 23
+23/07/19 06:51:46 INFO mapred.JobClient:   File System Counters
+23/07/19 06:51:46 INFO mapred.JobClient:     FILE: Number of bytes read=0
+23/07/19 06:51:46 INFO mapred.JobClient:     FILE: Number of bytes written=198692
+23/07/19 06:51:46 INFO mapred.JobClient:     FILE: Number of read operations=0
+23/07/19 06:51:46 INFO mapred.JobClient:     FILE: Number of large read operations=0
+23/07/19 06:51:46 INFO mapred.JobClient:     FILE: Number of write operations=0
+23/07/19 06:51:46 INFO mapred.JobClient:     HDFS: Number of bytes read=87
+23/07/19 06:51:46 INFO mapred.JobClient:     HDFS: Number of bytes written=465
+23/07/19 06:51:46 INFO mapred.JobClient:     HDFS: Number of read operations=1
+23/07/19 06:51:46 INFO mapred.JobClient:     HDFS: Number of large read operations=0
+23/07/19 06:51:46 INFO mapred.JobClient:     HDFS: Number of write operations=1
+23/07/19 06:51:46 INFO mapred.JobClient:   Job Counters 
+23/07/19 06:51:46 INFO mapred.JobClient:     Launched map tasks=1
+23/07/19 06:51:46 INFO mapred.JobClient:     Total time spent by all maps in occupied slots (ms)=9244
+23/07/19 06:51:46 INFO mapred.JobClient:     Total time spent by all reduces in occupied slots (ms)=0
+23/07/19 06:51:46 INFO mapred.JobClient:     Total time spent by all maps waiting after reserving slots (ms)=0
+23/07/19 06:51:46 INFO mapred.JobClient:     Total time spent by all reduces waiting after reserving slots (ms)=0
+23/07/19 06:51:46 INFO mapred.JobClient:   Map-Reduce Framework
+23/07/19 06:51:46 INFO mapred.JobClient:     Map input records=13
+23/07/19 06:51:46 INFO mapred.JobClient:     Map output records=13
+23/07/19 06:51:46 INFO mapred.JobClient:     Input split bytes=87
+23/07/19 06:51:46 INFO mapred.JobClient:     Spilled Records=0
+23/07/19 06:51:46 INFO mapred.JobClient:     CPU time spent (ms)=800
+23/07/19 06:51:46 INFO mapred.JobClient:     Physical memory (bytes) snapshot=85708800
+23/07/19 06:51:46 INFO mapred.JobClient:     Virtual memory (bytes) snapshot=402001920
+23/07/19 06:51:46 INFO mapred.JobClient:     Total committed heap usage (bytes)=64356352
+23/07/19 06:51:47 INFO mapreduce.ImportJobBase: Transferred 0 bytes in 15.501 seconds (0 bytes/sec)
+23/07/19 06:51:47 INFO mapreduce.ImportJobBase: Retrieved 13 records.
+23/07/19 06:51:47 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `clickstream` AS t LIMIT 1
+23/07/19 06:51:47 WARN hive.TableDefWriter: Column timestamp had to be cast to a less precise type in Hive
+23/07/19 06:51:47 INFO hive.HiveImport: Removing temporary files from import process: hdfs://0.0.0.0:8020/user/training/clickstream/_logs
+23/07/19 06:51:47 INFO hive.HiveImport: Loading uploaded data into Hive
+23/07/19 06:51:49 INFO hive.HiveImport: Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+23/07/19 06:51:49 INFO hive.HiveImport: Hive history file=/tmp/training/hive_job_log_training_202307190651_1873003410.txt
+23/07/19 06:51:54 INFO hive.HiveImport: OK
+23/07/19 06:51:54 INFO hive.HiveImport: Time taken: 4.377 seconds
+23/07/19 06:51:54 INFO hive.HiveImport: Loading data to table default.clickstream
+23/07/19 06:51:54 INFO hive.HiveImport: OK
+23/07/19 06:51:54 INFO hive.HiveImport: Time taken: 0.288 seconds
+23/07/19 06:51:54 INFO hive.HiveImport: Hive import complete.
+23/07/19 06:51:54 INFO hive.HiveImport: Export directory is empty, removing it.
+[training@localhost ~]$ sqoop import --connect jdbc:mysql://localhost/ecommerce --username training --password training --table customer --hive-import --hive-table customer -m 1
+23/07/19 06:57:26 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+23/07/19 06:57:26 INFO tool.BaseSqoopTool: Using Hive-specific delimiters for output. You can override
+23/07/19 06:57:26 INFO tool.BaseSqoopTool: delimiters with --fields-terminated-by, etc.
+23/07/19 06:57:26 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+23/07/19 06:57:26 INFO tool.CodeGenTool: Beginning code generation
+23/07/19 06:57:26 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `customer` AS t LIMIT 1
+23/07/19 06:57:26 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `customer` AS t LIMIT 1
+23/07/19 06:57:26 INFO orm.CompilationManager: HADOOP_HOME is /usr/lib/hadoop
+Note: /tmp/sqoop-training/compile/cd2e46fe7b0902f46f2fc9c8dd65d408/customer.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+23/07/19 06:57:28 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-training/compile/cd2e46fe7b0902f46f2fc9c8dd65d408/customer.jar
+23/07/19 06:57:28 WARN manager.MySQLManager: It looks like you are importing from mysql.
+23/07/19 06:57:28 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+23/07/19 06:57:28 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+23/07/19 06:57:28 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+23/07/19 06:57:28 INFO mapreduce.ImportJobBase: Beginning import of customer
+23/07/19 06:57:29 WARN mapred.JobClient: Use GenericOptionsParser for parsing the arguments. Applications should implement Tool for the same.
+23/07/19 06:57:31 INFO mapred.JobClient: Running job: job_202307190440_0002
+23/07/19 06:57:32 INFO mapred.JobClient:  map 0% reduce 0%
+23/07/19 06:57:40 INFO mapred.JobClient:  map 100% reduce 0%
+23/07/19 06:57:42 INFO mapred.JobClient: Job complete: job_202307190440_0002
+23/07/19 06:57:42 INFO mapred.JobClient: Counters: 23
+23/07/19 06:57:42 INFO mapred.JobClient:   File System Counters
+23/07/19 06:57:42 INFO mapred.JobClient:     FILE: Number of bytes read=0
+23/07/19 06:57:42 INFO mapred.JobClient:     FILE: Number of bytes written=198675
+23/07/19 06:57:42 INFO mapred.JobClient:     FILE: Number of read operations=0
+23/07/19 06:57:42 INFO mapred.JobClient:     FILE: Number of large read operations=0
+23/07/19 06:57:42 INFO mapred.JobClient:     FILE: Number of write operations=0
+23/07/19 06:57:42 INFO mapred.JobClient:     HDFS: Number of bytes read=87
+23/07/19 06:57:42 INFO mapred.JobClient:     HDFS: Number of bytes written=196
+23/07/19 06:57:42 INFO mapred.JobClient:     HDFS: Number of read operations=1
+23/07/19 06:57:42 INFO mapred.JobClient:     HDFS: Number of large read operations=0
+23/07/19 06:57:42 INFO mapred.JobClient:     HDFS: Number of write operations=1
+23/07/19 06:57:42 INFO mapred.JobClient:   Job Counters 
+23/07/19 06:57:42 INFO mapred.JobClient:     Launched map tasks=1
+23/07/19 06:57:42 INFO mapred.JobClient:     Total time spent by all maps in occupied slots (ms)=9615
+23/07/19 06:57:42 INFO mapred.JobClient:     Total time spent by all reduces in occupied slots (ms)=0
+23/07/19 06:57:42 INFO mapred.JobClient:     Total time spent by all maps waiting after reserving slots (ms)=0
+23/07/19 06:57:42 INFO mapred.JobClient:     Total time spent by all reduces waiting after reserving slots (ms)=0
+23/07/19 06:57:42 INFO mapred.JobClient:   Map-Reduce Framework
+23/07/19 06:57:42 INFO mapred.JobClient:     Map input records=5
+23/07/19 06:57:42 INFO mapred.JobClient:     Map output records=5
+23/07/19 06:57:42 INFO mapred.JobClient:     Input split bytes=87
+23/07/19 06:57:42 INFO mapred.JobClient:     Spilled Records=0
+23/07/19 06:57:42 INFO mapred.JobClient:     CPU time spent (ms)=880
+23/07/19 06:57:42 INFO mapred.JobClient:     Physical memory (bytes) snapshot=89116672
+23/07/19 06:57:42 INFO mapred.JobClient:     Virtual memory (bytes) snapshot=406921216
+23/07/19 06:57:42 INFO mapred.JobClient:     Total committed heap usage (bytes)=64356352
+23/07/19 06:57:42 INFO mapreduce.ImportJobBase: Transferred 0 bytes in 13.9889 seconds (0 bytes/sec)
+23/07/19 06:57:42 INFO mapreduce.ImportJobBase: Retrieved 5 records.
+23/07/19 06:57:42 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `customer` AS t LIMIT 1
+23/07/19 06:57:42 INFO hive.HiveImport: Removing temporary files from import process: hdfs://0.0.0.0:8020/user/training/customer/_logs
+23/07/19 06:57:42 INFO hive.HiveImport: Loading uploaded data into Hive
+23/07/19 06:57:44 INFO hive.HiveImport: Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+23/07/19 06:57:45 INFO hive.HiveImport: Hive history file=/tmp/training/hive_job_log_training_202307190657_410442832.txt
+23/07/19 06:57:49 INFO hive.HiveImport: OK
+23/07/19 06:57:49 INFO hive.HiveImport: Time taken: 4.351 seconds
+23/07/19 06:57:49 INFO hive.HiveImport: Loading data to table default.customer
+23/07/19 06:57:49 INFO hive.HiveImport: OK
+23/07/19 06:57:49 INFO hive.HiveImport: Time taken: 0.301 seconds
+23/07/19 06:57:50 INFO hive.HiveImport: Hive import complete.
+23/07/19 06:57:50 INFO hive.HiveImport: Export directory is empty, removing it.
+[training@localhost ~]$ sqoop import --connect jdbc:mysql://localhost/ecommerce --username training --password training --table purchase --hive-import --hive-table purchase -m 1
+23/07/19 07:04:04 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+23/07/19 07:04:04 INFO tool.BaseSqoopTool: Using Hive-specific delimiters for output. You can override
+23/07/19 07:04:04 INFO tool.BaseSqoopTool: delimiters with --fields-terminated-by, etc.
+23/07/19 07:04:04 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+23/07/19 07:04:04 INFO tool.CodeGenTool: Beginning code generation
+23/07/19 07:04:04 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `purchase` AS t LIMIT 1
+23/07/19 07:04:04 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `purchase` AS t LIMIT 1
+23/07/19 07:04:04 INFO orm.CompilationManager: HADOOP_HOME is /usr/lib/hadoop
+Note: /tmp/sqoop-training/compile/883d276503e3621435169182735fec4c/purchase.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+23/07/19 07:04:06 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-training/compile/883d276503e3621435169182735fec4c/purchase.jar
+23/07/19 07:04:06 WARN manager.MySQLManager: It looks like you are importing from mysql.
+23/07/19 07:04:06 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+23/07/19 07:04:06 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+23/07/19 07:04:06 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+23/07/19 07:04:06 INFO mapreduce.ImportJobBase: Beginning import of purchase
+23/07/19 07:04:07 WARN mapred.JobClient: Use GenericOptionsParser for parsing the arguments. Applications should implement Tool for the same.
+23/07/19 07:04:08 INFO mapred.JobClient: Running job: job_202307190440_0003
+23/07/19 07:04:09 INFO mapred.JobClient:  map 0% reduce 0%
+23/07/19 07:04:17 INFO mapred.JobClient:  map 100% reduce 0%
+23/07/19 07:04:19 INFO mapred.JobClient: Job complete: job_202307190440_0003
+23/07/19 07:04:19 INFO mapred.JobClient: Counters: 23
+23/07/19 07:04:19 INFO mapred.JobClient:   File System Counters
+23/07/19 07:04:19 INFO mapred.JobClient:     FILE: Number of bytes read=0
+23/07/19 07:04:19 INFO mapred.JobClient:     FILE: Number of bytes written=198684
+23/07/19 07:04:19 INFO mapred.JobClient:     FILE: Number of read operations=0
+23/07/19 07:04:19 INFO mapred.JobClient:     FILE: Number of large read operations=0
+23/07/19 07:04:19 INFO mapred.JobClient:     FILE: Number of write operations=0
+23/07/19 07:04:19 INFO mapred.JobClient:     HDFS: Number of bytes read=87
+23/07/19 07:04:19 INFO mapred.JobClient:     HDFS: Number of bytes written=139
+23/07/19 07:04:19 INFO mapred.JobClient:     HDFS: Number of read operations=1
+23/07/19 07:04:19 INFO mapred.JobClient:     HDFS: Number of large read operations=0
+23/07/19 07:04:19 INFO mapred.JobClient:     HDFS: Number of write operations=1
+23/07/19 07:04:19 INFO mapred.JobClient:   Job Counters 
+23/07/19 07:04:19 INFO mapred.JobClient:     Launched map tasks=1
+23/07/19 07:04:19 INFO mapred.JobClient:     Total time spent by all maps in occupied slots (ms)=9125
+23/07/19 07:04:19 INFO mapred.JobClient:     Total time spent by all reduces in occupied slots (ms)=0
+23/07/19 07:04:19 INFO mapred.JobClient:     Total time spent by all maps waiting after reserving slots (ms)=0
+23/07/19 07:04:19 INFO mapred.JobClient:     Total time spent by all reduces waiting after reserving slots (ms)=0
+23/07/19 07:04:19 INFO mapred.JobClient:   Map-Reduce Framework
+23/07/19 07:04:19 INFO mapred.JobClient:     Map input records=5
+23/07/19 07:04:19 INFO mapred.JobClient:     Map output records=5
+23/07/19 07:04:19 INFO mapred.JobClient:     Input split bytes=87
+23/07/19 07:04:19 INFO mapred.JobClient:     Spilled Records=0
+23/07/19 07:04:19 INFO mapred.JobClient:     CPU time spent (ms)=810
+23/07/19 07:04:19 INFO mapred.JobClient:     Physical memory (bytes) snapshot=88383488
+23/07/19 07:04:19 INFO mapred.JobClient:     Virtual memory (bytes) snapshot=404815872
+23/07/19 07:04:19 INFO mapred.JobClient:     Total committed heap usage (bytes)=64356352
+23/07/19 07:04:19 INFO mapreduce.ImportJobBase: Transferred 0 bytes in 13.0523 seconds (0 bytes/sec)
+23/07/19 07:04:19 INFO mapreduce.ImportJobBase: Retrieved 5 records.
+23/07/19 07:04:19 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `purchase` AS t LIMIT 1
+23/07/19 07:04:19 WARN hive.TableDefWriter: Column timestamp had to be cast to a less precise type in Hive
+23/07/19 07:04:19 INFO hive.HiveImport: Removing temporary files from import process: hdfs://0.0.0.0:8020/user/training/purchase/_logs
+23/07/19 07:04:19 INFO hive.HiveImport: Loading uploaded data into Hive
+23/07/19 07:04:21 INFO hive.HiveImport: Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+23/07/19 07:04:21 INFO hive.HiveImport: Hive history file=/tmp/training/hive_job_log_training_202307190704_574631421.txt
+23/07/19 07:04:26 INFO hive.HiveImport: OK
+23/07/19 07:04:26 INFO hive.HiveImport: Time taken: 4.211 seconds
+23/07/19 07:04:26 INFO hive.HiveImport: Loading data to table default.purchase
+23/07/19 07:04:26 INFO hive.HiveImport: OK
+23/07/19 07:04:26 INFO hive.HiveImport: Time taken: 0.348 seconds
+23/07/19 07:04:26 INFO hive.HiveImport: Hive import complete.
+23/07/19 07:04:26 INFO hive.HiveImport: Export directory is empty, removing it.
+[training@localhost ~]$ 
